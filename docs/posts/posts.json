@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2022-06-09-my-first-blog/",
+    "title": "my first blog",
+    "description": "My fisrt test post for my site.",
+    "author": [
+      {
+        "name": "Sean De Boo",
+        "url": "https://example.com/norajones"
+      }
+    ],
+    "date": "2022-06-09",
+    "categories": [],
+    "contents": "\r\n\r\n\r\nplot(iris)\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+    "preview": "posts/2022-06-09-my-first-blog/my-first-blog_files/figure-html5/unnamed-chunk-1-1.png",
+    "last_modified": "2022-06-09T15:54:35+10:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/welcome/",
     "title": "Welcome to Sean's HDS Blog",
     "description": "Welcome to our new blog, Sean's HDS Blog. We hope you enjoy \nreading what we have to say!",
