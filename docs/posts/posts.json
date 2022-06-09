@@ -22,15 +22,15 @@
     "description": "Welcome to our new blog, Sean's HDS Blog. We hope you enjoy \nreading what we have to say!",
     "author": [
       {
-        "name": "Nora Jones",
-        "url": "https://example.com/norajones"
+        "name": "Sean De Boo",
+        "url": "https://seandeboo.github.io/hds-blog/"
       }
     ],
     "date": "2022-06-09",
     "categories": [],
     "contents": "\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2022-06-09T15:22:58+10:00",
+    "last_modified": "2022-06-09T16:00:38+10:00",
     "input_file": {}
   }
 ]
