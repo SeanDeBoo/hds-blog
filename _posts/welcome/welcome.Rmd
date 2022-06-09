@@ -4,9 +4,9 @@ description: |
   Welcome to our new blog, Sean's HDS Blog. We hope you enjoy 
   reading what we have to say!
 author:
-  - name: Nora Jones 
-    url: https://example.com/norajones
-    affiliation: Spacely Sprockets
+  - name: Sean De Boo 
+    url: https://seandeboo.github.io/hds-blog/
+    affiliation: Health Data Science
     affiliation_url: https://example.com/spacelysprokets
 date: 06-09-2022
 output:
