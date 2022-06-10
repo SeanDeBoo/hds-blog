@@ -3,17 +3,17 @@
     {
       "path": "about.html",
       "title": "About this blog",
-      "description": "Some additional details about the blog by me",
+      "description": "Data science ideas and topics that interest me as I complete my\nHealth Data Science Masters.\n\nParticular focus on my current home state NSW.",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-06-09T16:01:05+10:00"
+      "last_modified": "2022-06-10T11:06:18+10:00"
     },
     {
       "path": "index.html",
       "title": "Sean's HDS Blog",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-06-09T16:01:07+10:00"
+      "last_modified": "2022-06-09T21:48:10+10:00"
     }
   ],
   "collections": ["posts/posts.json"]

@@ -11,9 +11,9 @@
     ],
     "date": "2022-06-09",
     "categories": [],
-    "contents": "\r\n\r\n\r\nplot(iris)\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
-    "preview": "posts/2022-06-09-my-first-blog/my-first-blog_files/figure-html5/unnamed-chunk-1-1.png",
-    "last_modified": "2022-06-09T15:54:35+10:00",
+    "contents": "\r\ngather the data\r\n\r\n\r\n\r\n\r\n\r\nNSW4 <- NSW %>% \r\n  filter(age_group != 'AgeGroup_None') %>%\r\n  group_by(notification_date) %>%\r\n  filter(age_group %in% c('AgeGroup_70+','AgeGroup_65-69', 'AgeGroup_60-64')) %>% \r\n  summarise(cases=sum(confirmed_cases_count))\r\n\r\nb <- ggplot()\r\nb <- b + geom_point(data=NSW4, aes(x=notification_date, y=cases), alpha=1/2, color='red')\r\nb <- b +geom_smooth(data=NSW4, aes(x=notification_date, y=cases), method='gam')\r\nb <- b + labs(title='NSW Confirmed Covid Cases',x= 'Date', y='Cases' )\r\nggplotly(b) \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+    "preview": "posts/2022-06-09-my-first-blog/my-first-blog_files/figure-html5/unnamed-chunk-3-1.png",
+    "last_modified": "2022-06-09T21:48:10+10:00",
     "input_file": {}
   },
   {

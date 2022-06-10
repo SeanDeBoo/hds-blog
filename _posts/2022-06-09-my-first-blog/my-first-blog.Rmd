@@ -14,9 +14,57 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(plotly)
+
+```
+
+gather the data
+
+``` {r, echo=FALSE}
+NSW <- read_csv("https://data.nsw.gov.au/data/dataset/3dc5dc39-40b4-4ee9-8ec6-2d862a916dcf/resource/4b03bc25-ab4b-46c0-bb3e-0c839c9915c5/download/confirmed_cases_table2_age_group_agg.csv")
+
+NSW <- NSW %>%
+  filter(notification_date >= '2021-12-01')
+
+
 ```
 
 ```{r, echo=TRUE}
-plot(iris)
+NSW4 <- NSW %>% 
+  filter(age_group != 'AgeGroup_None') %>%
+  group_by(notification_date) %>%
+  filter(age_group %in% c('AgeGroup_70+','AgeGroup_65-69', 'AgeGroup_60-64')) %>% 
+  summarise(cases=sum(confirmed_cases_count))
+
+b <- ggplot()
+b <- b + geom_point(data=NSW4, aes(x=notification_date, y=cases), alpha=1/2, color='red')
+b <- b +geom_smooth(data=NSW4, aes(x=notification_date, y=cases), method='gam')
+b <- b + labs(title='NSW Confirmed Covid Cases',x= 'Date', y='Cases' )
+ggplotly(b) 
+```
+
+```{r}
+NSWP <- NSW %>%
+  filter(confirmed_by_pcr == 'Yes') %>%
+  filter(age_group != 'AgeGroup_None')
+
+NSWR <- NSW %>%
+  filter(confirmed_by_pcr == 'No') %>%
+  filter(age_group != 'AgeGroup_None')
+
+theme_update(plot.title = element_text(hjust = 0.5))
+ggplot() +
+  ggtitle('NSW Confirmed cases PCR vs RAT') +
+  xlab('Date') + ylab('Number of Cases') +
+  geom_smooth(data=NSWP, aes(x = notification_date, y = confirmed_cases_count,
+                 color = 'PCR')) +
+  geom_smooth(data=NSWR, aes(x = notification_date, y = confirmed_cases_count,
+      color='RAT'))+
+  ylim(0,1500)+
+  theme_light() +
+  facet_wrap(~age_group, nrow = 3)
+
 
 ```
+

@@ -1,7 +1,10 @@
 ---
 title: "About this blog"
 description: |
-  Some additional details about the blog by me
+  Data science ideas and topics that interest me as I complete my
+  Health Data Science Masters.
+  
+  Particular focus on my current home state NSW.
 ---
 
 ```{r setup, include=FALSE}
