@@ -3,12 +3,12 @@ title: "Sean's HDS Blog"
 description: |
   Sean's HDS Blog
 output_dir: "docs"
-twitter:
-  site: "@seandeboo"
 navbar:
   right:
     - text: "Home"
       href: index.html
     - text: "About"
       href: about.html
+    - icon: fab fa-github
+      href: https://github.com/SeanDeBoo
 output: distill::distill_article

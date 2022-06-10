@@ -1,11 +1,11 @@
 ---
 title: "my first blog"
 description: |
-  My fisrt test post for my site.
+  My first test post for my site.
 author:
   - name: Sean De Boo
     url: https://example.com/norajones
-date: 2022-06-09
+date: 2022-06-10
 output:
   distill::distill_article:
     self_contained: false
