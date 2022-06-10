@@ -3,6 +3,8 @@ title: "Sean's HDS Blog"
 description: |
   Sean's HDS Blog
 output_dir: "docs"
+twitter:
+  site: "@seandeboo"
 navbar:
   right:
     - text: "Home"
