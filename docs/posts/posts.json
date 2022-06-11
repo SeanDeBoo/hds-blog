@@ -1,20 +1,20 @@
 [
   {
     "path": "posts/2022-06-09-my-first-blog/",
-    "title": "my first blog",
-    "description": "My first test post for my site.",
+    "title": "Queensland Covid Cases in 2022",
+    "description": "A look at the daily covid case counts in Qld so far in 2022.",
     "author": [
       {
         "name": "Sean De Boo",
-        "url": "https://example.com/norajones"
+        "url": "https://seandeboo.github.io/hds-blog/"
       }
     ],
-    "date": "2022-06-10",
+    "date": "2022-06-11",
     "categories": [],
-    "contents": "\r\ngather the data\r\n\r\n\r\n\r\n\r\n\r\nNSW4 <- NSW %>% \r\n  filter(age_group != 'AgeGroup_None') %>%\r\n  group_by(notification_date) %>%\r\n  filter(age_group %in% c('AgeGroup_70+','AgeGroup_65-69', 'AgeGroup_60-64')) %>% \r\n  summarise(cases=sum(confirmed_cases_count))\r\n\r\nb <- ggplot()\r\nb <- b + geom_point(data=NSW4, aes(x=notification_date, y=cases), alpha=1/2, color='red')\r\nb <- b +geom_smooth(data=NSW4, aes(x=notification_date, y=cases), method='gam')\r\nb <- b + labs(title='NSW Confirmed Covid Cases',x= 'Date', y='Cases' )\r\nggplotly(b) \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
-    "preview": "posts/2022-06-09-my-first-blog/my-first-blog_files/figure-html5/unnamed-chunk-3-1.png",
-    "last_modified": "2022-06-10T12:07:57+10:00",
-    "input_file": {}
+    "contents": "\r\nCovid case data by 5 year cohort is found at the Qld data portal Qld Data Portal.\r\nThe data is imported as a csv file with the notifcation date of the case as well as the 5 year age bracket the case falls into.\r\n\r\n# A tibble: 582,926 x 2\r\n   NOTIFICATION_DATE AGE_GROUP_5Y\r\n   <date>            <fct>       \r\n 1 2020-01-28        40-44 years \r\n 2 2020-01-30        40-44 years \r\n 3 2020-02-04        05-09 years \r\n 4 2020-02-04        35-39 years \r\n 5 2020-02-06        35-39 years \r\n 6 2020-02-22        55-59 years \r\n 7 2020-02-22        50-54 years \r\n 8 2020-02-24        55-59 years \r\n 9 2020-02-28        60-64 years \r\n10 2020-03-02        20-24 years \r\n# ... with 582,916 more rows\r\n\r\nThe date is imported as a character and was converted using as.Date(). Also the Age Groups were converted to a factor for easier grouping.\r\nThe next step is to filter data since 1st of December in 2021 which was when the border was opened, and local cases were allowed to grow.\r\n\r\n\r\nqld2 <- qld %>%\r\n  filter(NOTIFICATION_DATE > '2021-12-01') %>%\r\n  filter(AGE_GROUP_5Y != '100+ years') %>%\r\n  filter(!is.na(AGE_GROUP_5Y)) %>% \r\n  group_by(NOTIFICATION_DATE) %>% \r\n  count(AGE_GROUP_5Y)\r\n\r\n\r\n\r\nremoved the plots for NA and 100+ age groups\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+    "preview": "posts/2022-06-09-my-first-blog/my-first-blog_files/figure-html5/plot-1.png",
+    "last_modified": "2022-06-11T21:02:09+10:00",
+    "input_file": "my-first-blog.knit.md"
   },
   {
     "path": "posts/welcome/",
