@@ -1,7 +1,7 @@
 ---
 title: "NSW Covid Case Data"
 description: |
-  A short description of the post.
+  Faceted Chart for latest NSW Case Data.
 author:
   - name: Sean De Boo
     url: https://seandeboo.github.io/hds-blog/
@@ -14,10 +14,44 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(plotly)
+
+NSW <- read_csv("https://data.nsw.gov.au/data/dataset/3dc5dc39-40b4-4ee9-8ec6-2d862a916dcf/resource/4b03bc25-ab4b-46c0-bb3e-0c839c9915c5/download/confirmed_cases_table2_age_group_agg.csv")
+
+NSW <- NSW %>%
+  filter(notification_date >= '2021-12-01')
+
+
 ```
 
-Distill is a publication format for scientific and technical writing, native to the web.
 
-Learn more about using Distill at <https://rstudio.github.io/distill>.
+## NSW Covid case datasets from NSW Health
 
+Latest Cases by Age Groups and test method, both PCR tests and Rapid Antigen Testing in NSW
+
+
+``` {r plots, fig.width=12, fig.height=10}
+## PCR and RAT Split in the Data
+
+NSWP <- NSW %>%
+  filter(confirmed_by_pcr == 'Yes') %>%
+  filter(age_group != 'AgeGroup_None')
+
+NSWR <- NSW %>%
+  filter(confirmed_by_pcr == 'No') %>%
+  filter(age_group != 'AgeGroup_None')
+
+theme_update(plot.title = element_text(hjust = 0.5))
+ggplot() +
+  ggtitle('NSW Confirmed cases PCR vs RAT') +
+  xlab('Date') + ylab('Number of Cases') +
+  geom_smooth(data=NSWP, aes(x = notification_date, y = confirmed_cases_count,
+                 color = 'PCR')) +
+  geom_smooth(data=NSWR, aes(x = notification_date, y = confirmed_cases_count,
+      color='RAT'))+
+  facet_wrap(~age_group, nrow = 4, scales = "free_y")
+```
+
+Case decline has slowed slightly with a noticeable change in cases 0-19, appearing to flatten out which could be the start of an increase in BA.4/5 cases.
 

@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2022-06-16-nsw-covid-case-data/",
+    "title": "NSW Covid Case Data",
+    "description": "Faceted Chart for latest NSW Case Data.",
+    "author": [
+      {
+        "name": "Sean De Boo",
+        "url": "https://seandeboo.github.io/hds-blog/"
+      }
+    ],
+    "date": "2022-06-16",
+    "categories": [],
+    "contents": "\r\nNSW Covid case datasets from NSW Health\r\nLatest Cases by Age Groups and test method, both PCR tests and Rapid Antigen Testing in NSW\r\n\r\n\r\n\r\nCase decline has slowed slightly with a noticeable change in cases 0-19, appearing to flatten out which could be the start of an increase in BA.4/5 cases.\r\n\r\n\r\n\r\n",
+    "preview": "posts/2022-06-16-nsw-covid-case-data/nsw-covid-case-data_files/figure-html5/plots-1.png",
+    "last_modified": "2022-06-16T22:08:16+10:00",
+    "input_file": "nsw-covid-case-data.knit.md"
+  },
+  {
     "path": "posts/2022-06-09-my-first-blog/",
     "title": "Queensland Covid Cases in 2022",
     "description": "A look at the daily covid case counts in Qld so far in 2022.",
