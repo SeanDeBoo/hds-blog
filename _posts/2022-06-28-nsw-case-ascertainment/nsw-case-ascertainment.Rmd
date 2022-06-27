@@ -1,0 +1,69 @@
+---
+title: "NSW Case Ascertainment"
+description: |
+  Using the apyramid package to compare how Covid-19 cases are discovered by age group
+author:
+  - name: Sean De Boo
+    url: https://seandeboo.github.io/hds-blog/
+date: 2022-06-28
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(apyramid)
+
+knitr::opts_chunk$set()
+```
+
+
+``` {r gather, echo=FALSE}
+
+NSW <- read_csv("https://data.nsw.gov.au/data/dataset/3dc5dc39-40b4-4ee9-8ec6-2d862a916dcf/resource/4b03bc25-ab4b-46c0-bb3e-0c839c9915c5/download/confirmed_cases_table2_age_group_agg.csv")
+
+## make age_group a factor
+NSW$age_group <- as.factor(NSW$age_group)
+
+```
+
+## NSW Case data
+
+### 1. NSW cases in the past 2 weeks
+
+Looking at case data for the past 2 weeks, a large portion are in the 0-19 age group. However, the 70+ age group, which is the main user of PCR tests, also had a significant number of cases
+
+``` {r plot, fig.width = 10}
+
+NSWc <- NSW %>%
+  filter(notification_date >= '2022-06-12') %>% 
+  group_by(age_group, confirmed_by_pcr) %>% 
+  summarise(PCR = sum(confirmed_cases_count))
+
+
+age_pyramid(data = NSWc, age_group = 'age_group',
+            split_by = 'confirmed_by_pcr', count = 'PCR')
+
+
+```
+
+### 2. NSW cases since RAT tests became available
+
+Looking back to the start of Rapid Antigen Tests (RAT) being sold in NSW, we can see the pattern has been roughly that same. A large amount of the cases are aged 0-19 years old and the point where PCR becomes the main test type is around age 50 and over.
+
+``` {r since_recorded, fig.width=10, echo=FALSE}
+NSWd <- NSW %>%
+  filter(notification_date >= '2022-01-20') %>% 
+  group_by(age_group, confirmed_by_pcr) %>% 
+  summarise(PCR = sum(confirmed_cases_count))
+
+
+age_pyramid(data = NSWd, age_group = 'age_group',
+            split_by = 'confirmed_by_pcr', count = 'PCR')
+
+
+```
+
+Data can be access from [NSW COVID-19 cases by age range](https://tinyurl.com/4ajzzxws)
