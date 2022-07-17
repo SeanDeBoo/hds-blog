@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2022-07-08-nz-covid-data-exploration-pt-1/",
+    "title": "NZ Covid Data Exploration Pt 1",
+    "description": "A look at the covid datasets produced by NZ.",
+    "author": [
+      {
+        "name": "Sean De Boo",
+        "url": "https://seandeboo.github.io/hds-blog/"
+      }
+    ],
+    "date": "2022-07-17",
+    "categories": [],
+    "contents": "\r\nNZ Covid Case data exploration\r\nWith the recent spike in cases in NZ, and interest in the new Variant BA.5, It would be interesting to look at case numbers by age group.\r\nCases in younger age groups remain low relative to previous peak form the initial opening up wave.\r\n\r\n\r\n\r\nCases in older age groups are climbing fast and above previous peak levels.\r\n\r\n\r\n\r\nSo far there is no evidence of widespread re-infections\r\nHowever for 20-29 age group. Reinfections are on the rise. Mostly after a period of 90 days.\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+    "preview": "posts/2022-07-08-nz-covid-data-exploration-pt-1/nz-covid-data-exploration-pt-1_files/figure-html5/younger-1.png",
+    "last_modified": "2022-07-17T11:32:50+10:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2022-06-28-nsw-case-ascertainment/",
     "title": "NSW Case Ascertainment",
     "description": "Using the apyramid package to compare how Covid-19 cases are discovered by age group",
