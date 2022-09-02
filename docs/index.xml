@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>Sean's HDS Blog</title>
+    <link>https://seandeboo.github.io/hds-blog/</link>
+    <atom:link href="https://seandeboo.github.io/hds-blog/index.xml" rel="self" type="application/rss+xml"/>
+    <description>Sean's HDS Blog
+</description>
+    <generator>Distill</generator>
+    <lastBuildDate>Sat, 03 Sep 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>NSW BA.4/5 wave</title>
+      <dc:creator>Sean De Boo</dc:creator>
+      <link>https://seandeboo.github.io/hds-blog/posts/2022-07-17-nsw-ba45-wave</link>
+      <description>A quick look at case data for NSW current covid wave by age groups.</description>
+      <guid>https://seandeboo.github.io/hds-blog/posts/2022-07-17-nsw-ba45-wave</guid>
+      <pubDate>Sat, 03 Sep 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://seandeboo.github.io/hds-blog/posts/2022-07-17-nsw-ba45-wave/nsw-ba45-wave_files/figure-html5/plots-1.png" medium="image" type="image/png" width="2304" height="1920"/>
+    </item>
+    <item>
+      <title>NZ Covid Data Exploration Pt 1</title>
+      <dc:creator>Sean De Boo</dc:creator>
+      <link>https://seandeboo.github.io/hds-blog/posts/2022-07-08-nz-covid-data-exploration-pt-1</link>
+      <description>A look at the covid datasets produced by NZ.</description>
+      <guid>https://seandeboo.github.io/hds-blog/posts/2022-07-08-nz-covid-data-exploration-pt-1</guid>
+      <pubDate>Sun, 17 Jul 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://seandeboo.github.io/hds-blog/posts/2022-07-08-nz-covid-data-exploration-pt-1/nz-covid-data-exploration-pt-1_files/figure-html5/younger-1.png" medium="image" type="image/png" width="2688" height="1920"/>
+    </item>
+    <item>
+      <title>NSW Case Ascertainment</title>
+      <dc:creator>Sean De Boo</dc:creator>
+      <link>https://seandeboo.github.io/hds-blog/posts/2022-06-28-nsw-case-ascertainment</link>
+      <description>Using the apyramid package to compare how Covid-19 cases are discovered by age group</description>
+      <guid>https://seandeboo.github.io/hds-blog/posts/2022-06-28-nsw-case-ascertainment</guid>
+      <pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://seandeboo.github.io/hds-blog/posts/2022-06-28-nsw-case-ascertainment/nsw-case-ascertainment_files/figure-html5/plot-1.png" medium="image" type="image/png" width="1920" height="768"/>
+    </item>
+    <item>
+      <title>NSW Covid Case Data</title>
+      <dc:creator>Sean De Boo</dc:creator>
+      <link>https://seandeboo.github.io/hds-blog/posts/2022-06-16-nsw-covid-case-data</link>
+      <description>Faceted Chart for latest NSW Case Data.</description>
+      <guid>https://seandeboo.github.io/hds-blog/posts/2022-06-16-nsw-covid-case-data</guid>
+      <pubDate>Thu, 16 Jun 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://seandeboo.github.io/hds-blog/posts/2022-06-16-nsw-covid-case-data/nsw-covid-case-data_files/figure-html5/plots-1.png" medium="image" type="image/png" width="2304" height="1920"/>
+    </item>
+    <item>
+      <title>Queensland Covid Cases in 2022</title>
+      <dc:creator>Sean De Boo</dc:creator>
+      <link>https://seandeboo.github.io/hds-blog/posts/2022-06-09-my-first-blog</link>
+      <description>A look at the daily covid case counts in Qld so far in 2022.</description>
+      <guid>https://seandeboo.github.io/hds-blog/posts/2022-06-09-my-first-blog</guid>
+      <pubDate>Sat, 11 Jun 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://seandeboo.github.io/hds-blog/posts/2022-06-09-my-first-blog/my-first-blog_files/figure-html5/plot-1.png" medium="image" type="image/png" width="2304" height="1536"/>
+    </item>
+    <item>
+      <title>Welcome to Sean's HDS Blog</title>
+      <dc:creator>Sean De Boo</dc:creator>
+      <link>https://seandeboo.github.io/hds-blog/posts/welcome</link>
+      <description>Welcome to our new blog, Sean's HDS Blog. We hope you enjoy 
+reading what we have to say!</description>
+      <guid>https://seandeboo.github.io/hds-blog/posts/welcome</guid>
+      <pubDate>Thu, 09 Jun 2022 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

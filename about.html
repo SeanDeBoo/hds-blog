@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
   <meta name="generator" content="distill" />
-  <link rel="alternate" type="application/rss+xml" href="https://seandeboo.github.io/hds-blog/index.xml" />
 
   <style type="text/css">
   /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
@@ -89,26 +88,29 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>Sean's HDS Blog</title>
+  <title>Sean's HDS Blog: About this blog</title>
 
+  <meta property="description" itemprop="description" content="Data science ideas and topics that interest me as I complete my&#10;Health Data Science Masters.&#10;&#10;Particular focus on my current home state NSW."/>
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Sean&#39;s HDS Blog"/>
+  <meta property="og:title" content="Sean&#39;s HDS Blog: About this blog"/>
   <meta property="og:type" content="article"/>
+  <meta property="og:description" content="Data science ideas and topics that interest me as I complete my&#10;Health Data Science Masters.&#10;&#10;Particular focus on my current home state NSW."/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Sean&#39;s HDS Blog"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Sean&#39;s HDS Blog"/>
+  <meta property="twitter:title" content="Sean&#39;s HDS Blog: About this blog"/>
+  <meta property="twitter:description" content="Data science ideas and topics that interest me as I complete my&#10;Health Data Science Masters.&#10;&#10;Particular focus on my current home state NSW."/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site","listing"]}},"value":[{"type":"character","attributes":{},"value":["Sean's HDS Blog"]},{"type":"character","attributes":{},"value":["distill::distill_website"]},{"type":"character","attributes":{},"value":["posts"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description"]}},"value":[{"type":"character","attributes":{},"value":["About this blog"]},{"type":"character","attributes":{},"value":["Data science ideas and topics that interest me as I complete my\nHealth Data Science Masters.\n\nParticular focus on my current home state NSW."]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2080,12 +2082,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 </head>
 
-<body class="layout-listing">
+<body>
 
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Sean's HDS Blog","authors":[]}
+{"title":"About this blog","description":"Data science ideas and topics that interest me as I complete my\nHealth Data Science Masters.\n\nParticular focus on my current home state NSW.","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2109,257 +2111,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
-<!--radix_placeholder_article_listing-->
-
-
-<script type="application/javascript">
-
-function init_posts_list() {
-
-  function load_image(img) {
-    var src = $(img).attr('data-src');
-    if (src) {
-      $(img).attr('src', src);
-      $(img).on("load", function() {
-        img.removeAttribute('data-src');
-      });
-    }
-  }
-
-  function set_posts_visible(posts, visible) {
-    if (visible) {
-
-      // show bottom border by default
-      $(posts).removeClass('post-preview-last');
-
-      // apply limits if need be
-      var max_posts = 25;
-      var apply_limits = $('.posts-container').hasClass('posts-apply-limit');
-      if (apply_limits && posts.length > max_posts) {
-        posts = $(posts).slice(0, max_posts);
-      } else {
-        $('.posts-more a').addClass('hidden');
-      }
-
-      // apply last style
-      $(posts.slice(-1)[0]).addClass('post-preview-last');
-
-      $(posts).removeClass('hidden');
-      $(posts).find('img[data-src]').each(function(i, img) {
-        load_image(img);
-      });
-    } else {
-      $(posts).addClass('hidden');
-    }
-  }
-
-  function apply_hash_filter() {
-
-    // clear active state
-    $('.categories .active').removeClass('active');
-
-    // mark all posts invisible to start
-    set_posts_visible($('.posts-list').children('a'), false);
-
-    // if we have a hash filter
-    if (window.location.hash && window.location.hash.startsWith("#category:")) {
-
-      // mark posts that match the category visible
-      var page_category = window.location.hash.replace(/^#category:/, "");
-      page_category = decodeURIComponent(page_category)
-      var posts = $('.post-metadata').map(function(idx, script) {
-        var metadata = $.parseJSON($(script).html());
-        var post = null;
-        $.each(metadata.categories, function(idx, category) {
-          category = category.replace(/ /g,"_");
-          if ((page_category || '').toLowerCase() === "articles" || category === page_category) {
-            post = $(script).parent().get();
-            return false;
-          }
-        });
-        return post;
-      });
-      set_posts_visible(posts, true);
-
-      // mark the hash active
-      $('.categories li>a[href="' + decodeURIComponent(window.location.hash) + '"]').addClass('active');
-
-      // update the list_caption
-      var list_caption = $('.posts-list-caption');
-      var caption = (page_category || '').toLowerCase() === "articles"
-        ? list_caption.attr('data-caption')
-        : ('Category: ' + page_category.replace(/_/g," "));
-      list_caption.text(caption);
-
-    } else {
-
-      // no hash filter, make all posts visible (subject to max display)
-      set_posts_visible($('.posts-list').children(), true);
-
-      // reset list caption
-      var list_caption = $('.posts-list-caption');
-      list_caption.text(list_caption.attr('data-caption'));
-
-
-    }
-  }
-
-  // more articles
-  function apply_post_limits(apply) {
-    if (apply) {
-      $('.posts-container').addClass('posts-apply-limit');
-      $('.posts-more a').removeClass('hidden');
-    } else {
-      $('.posts-container').removeClass('posts-apply-limit');
-      $('.posts-more a').addClass('hidden');
-    }
-  }
-
-  // click handling for tags
-  $('.dt-tag').click(function(ev) {
-    window.location.hash = '#category:' + $(this).text().replace(/ /g, "_");
-    return false;
-  })
-
-  // hash filter handling
-  apply_hash_filter();
-  $(window).on('hashchange',function() {
-    apply_post_limits(true);
-    apply_hash_filter();
-  });
-
-  // more articles link
-  $('.posts-more a').click(function(e) {
-    e.preventDefault();
-    apply_post_limits(false);
-    apply_hash_filter();
-    return false;
-  });
-
-}
-
-</script>
-
-
-
-<div class="posts-container posts-apply-limit l-page">
-<div class="posts-list">
-<h1 class="posts-list-caption" data-caption="Sean&#39;s HDS Blog">Sean's HDS Blog</h1>
-<a href="posts/2022-07-17-nsw-ba45-wave/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Sept. 3, 2022</div>
-<div class="dt-authors">
-<div class="dt-author">Sean De Boo</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="posts/2022-07-17-nsw-ba45-wave/nsw-ba45-wave_files/figure-html5/plots-1.png"/>
-</div>
-<div class="description">
-<h2>NSW BA.4/5 wave</h2>
-<div class="dt-tags"></div>
-<p>A quick look at case data for NSW current covid wave by age groups.</p>
-</div>
-</a>
-<a href="posts/2022-07-08-nz-covid-data-exploration-pt-1/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">July 17, 2022</div>
-<div class="dt-authors">
-<div class="dt-author">Sean De Boo</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="posts/2022-07-08-nz-covid-data-exploration-pt-1/nz-covid-data-exploration-pt-1_files/figure-html5/younger-1.png"/>
-</div>
-<div class="description">
-<h2>NZ Covid Data Exploration Pt 1</h2>
-<div class="dt-tags"></div>
-<p>A look at the covid datasets produced by NZ.</p>
-</div>
-</a>
-<a href="posts/2022-06-28-nsw-case-ascertainment/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">June 28, 2022</div>
-<div class="dt-authors">
-<div class="dt-author">Sean De Boo</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="posts/2022-06-28-nsw-case-ascertainment/nsw-case-ascertainment_files/figure-html5/plot-1.png"/>
-</div>
-<div class="description">
-<h2>NSW Case Ascertainment</h2>
-<div class="dt-tags"></div>
-<p>Using the apyramid package to compare how Covid-19 cases are discovered by age group</p>
-</div>
-</a>
-<a href="posts/2022-06-16-nsw-covid-case-data/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">June 16, 2022</div>
-<div class="dt-authors">
-<div class="dt-author">Sean De Boo</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="posts/2022-06-16-nsw-covid-case-data/nsw-covid-case-data_files/figure-html5/plots-1.png"/>
-</div>
-<div class="description">
-<h2>NSW Covid Case Data</h2>
-<div class="dt-tags"></div>
-<p>Faceted Chart for latest NSW Case Data.</p>
-</div>
-</a>
-<a href="posts/2022-06-09-my-first-blog/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">June 11, 2022</div>
-<div class="dt-authors">
-<div class="dt-author">Sean De Boo</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="posts/2022-06-09-my-first-blog/my-first-blog_files/figure-html5/plot-1.png"/>
-</div>
-<div class="description">
-<h2>Queensland Covid Cases in 2022</h2>
-<div class="dt-tags"></div>
-<p>A look at the daily covid case counts in Qld so far in 2022.</p>
-</div>
-</a>
-<a href="posts/welcome/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">June 9, 2022</div>
-<div class="dt-authors">
-<div class="dt-author">Sean De Boo</div>
-</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Welcome to Sean's HDS Blog</h2>
-<div class="dt-tags"></div>
-<p>Welcome to our new blog, Sean's HDS Blog. We hope you enjoy 
-reading what we have to say!</p>
-</div>
-</a>
-</div>
-<div class="posts-more">
-<a href="#">More articles &raquo;</a>
-</div>
-</div>
-<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
-<h1>Sean’s HDS Blog</h1>
+<h1>About this blog</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-
+<p><p>Data science ideas and topics that interest me as I complete my Health Data Science Masters.</p>
+<p>Particular focus on my current home state NSW.</p></p>
 </div>
 
 

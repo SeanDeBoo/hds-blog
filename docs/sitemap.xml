@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
+  <url>
+    <loc>https://seandeboo.github.io/hds-blog/about.html</loc>
+    <lastmod>2022-06-10T11:06:15+10:00</lastmod>
+  </url>
+  <url>
+    <loc>https://seandeboo.github.io/hds-blog/</loc>
+    <lastmod>2022-06-09T15:22:50+10:00</lastmod>
+  </url>
+  <url>
+    <loc>https://seandeboo.github.io/hds-blog/posts/2022-07-17-nsw-ba45-wave/</loc>
+    <lastmod>2022-09-03T00:49:23+10:00</lastmod>
+  </url>
+  <url>
+    <loc>https://seandeboo.github.io/hds-blog/posts/2022-07-08-nz-covid-data-exploration-pt-1/</loc>
+    <lastmod>2022-07-17T11:32:50+10:00</lastmod>
+  </url>
+  <url>
+    <loc>https://seandeboo.github.io/hds-blog/posts/2022-06-28-nsw-case-ascertainment/</loc>
+    <lastmod>2022-06-28T09:01:39+10:00</lastmod>
+  </url>
+  <url>
+    <loc>https://seandeboo.github.io/hds-blog/posts/2022-06-16-nsw-covid-case-data/</loc>
+    <lastmod>2022-06-16T22:08:16+10:00</lastmod>
+  </url>
+  <url>
+    <loc>https://seandeboo.github.io/hds-blog/posts/2022-06-09-my-first-blog/</loc>
+    <lastmod>2022-06-11T21:02:10+10:00</lastmod>
+  </url>
+  <url>
+    <loc>https://seandeboo.github.io/hds-blog/posts/welcome/</loc>
+    <lastmod>2022-06-09T16:00:38+10:00</lastmod>
+  </url>
+</urlset>

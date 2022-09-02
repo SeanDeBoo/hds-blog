@@ -2,6 +2,7 @@ name: "."
 title: "Sean's HDS Blog"
 description: |
   Sean's HDS Blog
+base_url: https://seandeboo.github.io/hds-blog/
 output_dir: "docs"
 navbar:
   right:

@@ -13,8 +13,10 @@
     "categories": [],
     "contents": "\r\nNSW Covid case datasets from NSW Health\r\nLatest Cases by Age Groups and test method, both PCR tests and Rapid Antigen Testing in NSW\r\n\r\n\r\n\r\nCase decline continues for all age groups, however a noticeably flat for 0-19. Also PCR tests aged 70+ is still at almost peak levels and dropping slowly.\r\n\r\n\r\n\r\n",
     "preview": "posts/2022-07-17-nsw-ba45-wave/nsw-ba45-wave_files/figure-html5/plots-1.png",
-    "last_modified": "2022-09-03T00:49:22+10:00",
-    "input_file": "nsw-ba45-wave.knit.md"
+    "last_modified": "2022-09-03T00:49:23+10:00",
+    "input_file": {},
+    "preview_width": 2304,
+    "preview_height": 1920
   },
   {
     "path": "posts/2022-07-08-nz-covid-data-exploration-pt-1/",
@@ -31,7 +33,9 @@
     "contents": "\r\nNZ Covid Case data exploration\r\nWith the recent spike in cases in NZ, and interest in the new Variant BA.5, It would be interesting to look at case numbers by age group.\r\nCases in younger age groups remain low relative to previous peak form the initial opening up wave.\r\n\r\n\r\n\r\nCases in older age groups are climbing fast and above previous peak levels.\r\n\r\n\r\n\r\nSo far there is no evidence of widespread re-infections\r\nHowever for 20-29 age group. Reinfections are on the rise. Mostly after a period of 90 days.\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
     "preview": "posts/2022-07-08-nz-covid-data-exploration-pt-1/nz-covid-data-exploration-pt-1_files/figure-html5/younger-1.png",
     "last_modified": "2022-07-17T11:32:50+10:00",
-    "input_file": {}
+    "input_file": {},
+    "preview_width": 2688,
+    "preview_height": 1920
   },
   {
     "path": "posts/2022-06-28-nsw-case-ascertainment/",
@@ -48,7 +52,9 @@
     "contents": "\r\n\r\n\r\n\r\nNSW Case data\r\n1. NSW cases in the past 2 weeks\r\nLooking at case data for the past 2 weeks, a large portion are in the 0-19 age group. However, the 70+ age group, which is the main user of PCR tests, also had a significant number of cases\r\n\r\n\r\nNSWc <- NSW %>%\r\n  filter(notification_date >= '2022-06-12') %>% \r\n  group_by(age_group, confirmed_by_pcr) %>% \r\n  summarise(PCR = sum(confirmed_cases_count))\r\n\r\n\r\nage_pyramid(data = NSWc, age_group = 'age_group',\r\n            split_by = 'confirmed_by_pcr', count = 'PCR')\r\n\r\n\r\n\r\n\r\n2. NSW cases since RAT tests became available\r\nLooking back to the start of Rapid Antigen Tests (RAT) being sold in NSW, we can see the pattern has been roughly that same. A large amount of the cases are aged 0-19 years old and the point where PCR becomes the main test type is around age 50 and over.\r\n\r\n\r\n\r\nData can be access from NSW COVID-19 cases by age range\r\n\r\n\r\n\r\n",
     "preview": "posts/2022-06-28-nsw-case-ascertainment/nsw-case-ascertainment_files/figure-html5/plot-1.png",
     "last_modified": "2022-06-28T09:01:39+10:00",
-    "input_file": {}
+    "input_file": {},
+    "preview_width": 1920,
+    "preview_height": 768
   },
   {
     "path": "posts/2022-06-16-nsw-covid-case-data/",
@@ -65,7 +71,9 @@
     "contents": "\r\nNSW Covid case datasets from NSW Health\r\nLatest Cases by Age Groups and test method, both PCR tests and Rapid Antigen Testing in NSW\r\n\r\n\r\n\r\nCase decline has slowed slightly with a noticeable change in cases 0-19, appearing to flatten out which could be the start of an increase in BA.4/5 cases.\r\n\r\n\r\n\r\n",
     "preview": "posts/2022-06-16-nsw-covid-case-data/nsw-covid-case-data_files/figure-html5/plots-1.png",
     "last_modified": "2022-06-16T22:08:16+10:00",
-    "input_file": {}
+    "input_file": {},
+    "preview_width": 2304,
+    "preview_height": 1920
   },
   {
     "path": "posts/2022-06-09-my-first-blog/",
@@ -82,7 +90,9 @@
     "contents": "\r\nCovid case data by 5 year cohort is found at the Qld data portal Qld Data Portal.\r\nThe data is imported as a csv file with the notifcation date of the case as well as the 5 year age bracket the case falls into.\r\n\r\n# A tibble: 582,926 x 2\r\n   NOTIFICATION_DATE AGE_GROUP_5Y\r\n   <date>            <fct>       \r\n 1 2020-01-28        40-44 years \r\n 2 2020-01-30        40-44 years \r\n 3 2020-02-04        05-09 years \r\n 4 2020-02-04        35-39 years \r\n 5 2020-02-06        35-39 years \r\n 6 2020-02-22        55-59 years \r\n 7 2020-02-22        50-54 years \r\n 8 2020-02-24        55-59 years \r\n 9 2020-02-28        60-64 years \r\n10 2020-03-02        20-24 years \r\n# ... with 582,916 more rows\r\n\r\nThe date is imported as a character and was converted using as.Date(). Also the Age Groups were converted to a factor for easier grouping.\r\nThe next step is to filter data since 1st of December in 2021 which was when the border was opened, and local cases were allowed to grow.\r\n\r\n\r\nqld2 <- qld %>%\r\n  filter(NOTIFICATION_DATE > '2021-12-01') %>%\r\n  filter(AGE_GROUP_5Y != '100+ years') %>%\r\n  filter(!is.na(AGE_GROUP_5Y)) %>% \r\n  group_by(NOTIFICATION_DATE) %>% \r\n  count(AGE_GROUP_5Y)\r\n\r\n\r\n\r\nremoved the plots for NA and 100+ age groups\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
     "preview": "posts/2022-06-09-my-first-blog/my-first-blog_files/figure-html5/plot-1.png",
     "last_modified": "2022-06-11T21:02:10+10:00",
-    "input_file": {}
+    "input_file": {},
+    "preview_width": 2304,
+    "preview_height": 1536
   },
   {
     "path": "posts/welcome/",
