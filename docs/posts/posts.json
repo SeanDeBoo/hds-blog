@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2022-07-17-nsw-ba45-wave/",
+    "title": "NSW BA.4/5 wave",
+    "description": "A quick look at case data for NSW current covid wave by age groups.",
+    "author": [
+      {
+        "name": "Sean De Boo",
+        "url": "https://seandeboo.github.io/hds-blog/"
+      }
+    ],
+    "date": "2022-09-03",
+    "categories": [],
+    "contents": "\r\nNSW Covid case datasets from NSW Health\r\nLatest Cases by Age Groups and test method, both PCR tests and Rapid Antigen Testing in NSW\r\n\r\n\r\n\r\nCase decline continues for all age groups, however a noticeably flat for 0-19. Also PCR tests aged 70+ is still at almost peak levels and dropping slowly.\r\n\r\n\r\n\r\n",
+    "preview": "posts/2022-07-17-nsw-ba45-wave/nsw-ba45-wave_files/figure-html5/plots-1.png",
+    "last_modified": "2022-09-03T00:49:22+10:00",
+    "input_file": "nsw-ba45-wave.knit.md"
+  },
+  {
     "path": "posts/2022-07-08-nz-covid-data-exploration-pt-1/",
     "title": "NZ Covid Data Exploration Pt 1",
     "description": "A look at the covid datasets produced by NZ.",
