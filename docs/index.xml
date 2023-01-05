@@ -7,7 +7,15 @@
     <description>Sean's HDS Blog
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Sat, 03 Sep 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 04 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Python Advent of Code</title>
+      <dc:creator>Sean De Boo</dc:creator>
+      <link>https://seandeboo.github.io/hds-blog/posts/2023-01-05-python-advent-of-code</link>
+      <description>A short description of the post.</description>
+      <guid>https://seandeboo.github.io/hds-blog/posts/2023-01-05-python-advent-of-code</guid>
+      <pubDate>Wed, 04 Jan 2023 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>NSW BA.4/5 wave</title>
       <dc:creator>Sean De Boo</dc:creator>

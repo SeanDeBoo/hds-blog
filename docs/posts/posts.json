@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2023-01-05-python-advent-of-code/",
+    "title": "Python Advent of Code",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Sean De Boo",
+        "url": "https://seandeboo.github.io/hds-blog/"
+      }
+    ],
+    "date": "2023-01-05",
+    "categories": [],
+    "contents": "\r\n\r\n\r\nr = [1, 3, 4]\r\n\r\nr = [el**2 for el in r]\r\n\r\nprint(r)\r\n[1, 9, 16]\r\n\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2023-01-05T22:38:59+10:30",
+    "input_file": "python-advent-of-code.knit.md"
+  },
+  {
     "path": "posts/2022-07-17-nsw-ba45-wave/",
     "title": "NSW BA.4/5 wave",
     "description": "A quick look at case data for NSW current covid wave by age groups.",
@@ -32,8 +49,8 @@
     "categories": [],
     "contents": "\r\nNZ Covid Case data exploration\r\nWith the recent spike in cases in NZ, and interest in the new Variant BA.5, It would be interesting to look at case numbers by age group.\r\nCases in younger age groups remain low relative to previous peak form the initial opening up wave.\r\n\r\n\r\n\r\nCases in older age groups are climbing fast and above previous peak levels.\r\n\r\n\r\n\r\nSo far there is no evidence of widespread re-infections\r\nHowever for 20-29 age group. Reinfections are on the rise. Mostly after a period of 90 days.\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
     "preview": "posts/2022-07-08-nz-covid-data-exploration-pt-1/nz-covid-data-exploration-pt-1_files/figure-html5/younger-1.png",
-    "last_modified": "2022-07-17T11:32:50+10:00",
-    "input_file": {},
+    "last_modified": "2022-09-23T18:38:12+10:00",
+    "input_file": "nz-covid-data-exploration-pt-1.knit.md",
     "preview_width": 2688,
     "preview_height": 1920
   },
